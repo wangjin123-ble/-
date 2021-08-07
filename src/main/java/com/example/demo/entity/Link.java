@@ -25,10 +25,10 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Link对象", description = "")
 public class Link implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.ASSIGN_UUID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     private String chang;
 
@@ -40,31 +40,58 @@ public class Link implements Serializable {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date update_at;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
+    private String deleted;
 
-    public String getId() {
-        return id;
-    }
+//    public Date getCreate_at() {
+//        return create_at;
+//    }
+//
+//    public void setCreate_at(Date create_at) {
+//        this.create_at = create_at;
+//    }
+//
+//    public Date getUpdate_at() {
+//        return update_at;
+//    }
+//
+//    public void setUpdate_at(Date update_at) {
+//        this.update_at = update_at;
+//    }
+//
+//    public String getDeleted() {
+//        return deleted;
+//    }
+//
+//    public void setDeleted(String deleted) {
+//        this.deleted = deleted;
+//    }
+//
+////    public static long getSerialVersionUID() {
+////        return serialVersionUID;
+////    }
+//
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
+//
+//    public String getChang() {
+//        return chang;
+//    }
+//
+//    public void setChang(String chang) {
+//        this.chang = chang;
+//    }
+//
+//    public String getDuan() {
+//        return duan;
+//    }
+//
+//    public void setDuan(String duan) {
+//        this.duan = duan;
+//    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getChang() {
-        return chang;
-    }
-
-    public void setChang(String chang) {
-        this.chang = chang;
-    }
-
-    public String getDuan() {
-        return duan;
-    }
-
-    public void setDuan(String duan) {
-        this.duan = duan;
-    }
 }
